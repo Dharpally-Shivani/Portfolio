@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom right, #e0f7fa, #fffde7);
+      scroll-behavior: smooth;
+      color: #333;
+    }
+
+    header {
+      background: #00695c;
+      padding: 25px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .nav-buttons {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-buttons button {
+      background-color: #81d4fa;
+      color: #004d40;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-buttons button:hover {
+      background-color: #4dd0e1;
+      transform: scale(1.05);
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      animation: fadeIn 0.6s ease;
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    h2 {
+      border-bottom: 3px solid #b2ebf2;
+      padding-bottom: 8px;
+      color: #00796b;
+    }
+
+    .resume-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #00796b;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .resume-link:hover {
+      background-color: #004d40;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .three-column {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .three-column div,
+    .three-column li {
+      background: #f1fdfb;
+      padding: 12px 15px;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      list-style: none;
+    }
+
+    .three-column li a {
+      text-decoration: none;
+      color: #00695c;
+      font-weight: bold;
+    }
+
+    .three-column li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Portfolio</h1>
+</header>
+
+<!-- Navigation Buttons -->
+<div class="nav-buttons">
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('about')">About</button>
+  <button onclick="showSection('education')">Education</button>
+  <button onclick="showSection('skills')">Skills</button>
+  <button onclick="showSection('certificates')">Certificates</button>
+  <button onclick="showSection('projects')">Projects</button>
+  <button onclick="showSection('internships')">Internships</button>
+  <button onclick="showSection('resume')">Resume</button>
+</div>
+
+<!-- Sections -->
+<div id="home" class="section active">
+  <h1>Home</h1>
+  <h2>Hi, I'm Dharpally Shivani</h2>
+  <p>Welcome to my portfolio! Explore my journey, skills, and accomplishments below.</p>
+</div>
+
+<div id="about" class="section">
+  <h2>About Me</h2>
+  <p>I’m a passionate and curious web developer who loves turning ideas into interactive digital experiences.
+    With a strong foundation in both frontend and backend technologies, I strive to build clean, user-focused solutions.</p>
+</div>
+
+<div id="education" class="section">
+  <h2>Education</h2>
+  <p>Bachelor's Degree in Information Technology</p>
+</div>
+
+<div id="skills" class="section">
+  <h2>Skills</h2>
+  <div class="three-column">
+    <div>HTML</div>
+    <div>CSS</div>
+    <div>Node.js</div>
+    <div>Python</div>
+    <div>Java</div>
+    <div>C</div>
+  </div>
+</div>
+
+<!-- Certificates Section -->
+<div id="certificates" class="section">
+  <h2>Certificates</h2>
+  <p id="cert-count"></p>
+
+  <ul class="three-column" id="cert-list">
+    <li>
+      <a href="https://drive.google.com/file/d/1-zoMwze4umV8jSurkmaI61KX_hVpWBP6/view?usp=drivesdk" target="_blank">
+        <strong>HTML5 and CSS3</strong><br>Workshop by TASK
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="three-column">
+    <div><strong>Portfolio Website</strong><br>Showcasing personal work and experience.</div>
+    <div><strong>Document Verification Using ML</strong><br>Verifies documents using machine learning.</div>
+  </div>
+</div>
+
+<div id="internships" class="section">
+  <h2>Internships</h2>
+  
+</div>
+
+<div id="resume" class="section">
+  <h2>Resume</h2>
+  <p>You can view my resume using the link below:</p>
+  <a href="https://drive.google.com/file/d/1-B1hGE-sUHl6HamUvyQuGGuECiNZUBw5/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="resume-link">
+    📄 View Resume (PDF)
+  </a>
+</div>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => section.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (id === 'certificates') {
+        updateCertificateCount();
+      }
+    }
+  }
+
+  function updateCertificateCount() {
+    const certList = document.querySelectorAll('#cert-list li');
+    const countElement = document.getElementById('cert-count');
+    countElement.textContent = `Total Certificates: ${certList.length}`;
+  }
+</script>
+</body>
+</html>
